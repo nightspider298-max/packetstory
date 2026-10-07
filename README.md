@@ -68,9 +68,11 @@ packetstory analyze examples/packetstory-demo.pcap --output examples/sample-repo
 
 Use captures you are authorized to inspect. PCAP contents can contain sensitive personal or authentication data even when this tool does not print packet bodies. The tool does not decrypt TLS, execute packet content, or upload captures. Findings are review cues, not proof of maliciousness.
 
-## Screenshots
+## Report Preview
 
-Add a screenshot of a locally generated sample report here when preparing a release.
+The report below was generated from the checked-in synthetic demo capture. Its addresses are reserved documentation IPs; no real traffic or external service is shown.
+
+![PacketStory sample report showing the executive summary, capture information, and investigation timeline](examples/packetstory-report-preview.png)
 
 ## Roadmap
 
