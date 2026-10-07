@@ -1,0 +1,174 @@
+{
+  "capture": {
+    "file_name": "packetstory-demo.pcap",
+    "file_size_bytes": 260,
+    "format": "PCAP/PCAPNG (detected by Scapy)",
+    "first_packet": "2026-10-07T16:48:10.087Z",
+    "last_packet": "2026-10-07T16:48:13.087Z"
+  },
+  "statistics": {
+    "total_packets": 2,
+    "capture_duration_seconds": 3.0,
+    "captured_bytes": 204,
+    "approx_transferred_bytes": 204,
+    "protocol_distribution": {
+      "Ethernet": 2,
+      "IPv4": 2,
+      "UDP": 1,
+      "TCP": 1
+    },
+    "top_talkers": [
+      {
+        "address": "192.0.2.10",
+        "packets": 2
+      }
+    ],
+    "top_destinations": [
+      {
+        "address": "192.0.2.53",
+        "packets": 1
+      },
+      {
+        "address": "198.51.100.20",
+        "packets": 1
+      }
+    ],
+    "top_ports": [
+      {
+        "port": "53",
+        "packets": 1
+      },
+      {
+        "port": "80",
+        "packets": 1
+      }
+    ],
+    "dns_query_count": 1,
+    "http_request_count": 1,
+    "tcp_connection_attempts": 0,
+    "parse_errors": 0
+  },
+  "timeline": [
+    {
+      "timestamp": "2026-10-07T16:48:10.087Z",
+      "kind": "DNS query",
+      "summary": "192.0.2.10 queried demo.example",
+      "source": "192.0.2.10",
+      "destination": "192.0.2.53",
+      "details": {
+        "query": "demo.example"
+      }
+    },
+    {
+      "timestamp": "2026-10-07T16:48:13.087Z",
+      "kind": "HTTP request",
+      "summary": "GET demo.example/health",
+      "source": "192.0.2.10",
+      "destination": "198.51.100.20",
+      "details": {
+        "method": "GET",
+        "path": "/health",
+        "host": "demo.example",
+        "user_agent": "PacketStory-Demo/1.0"
+      }
+    }
+  ],
+  "indicators": [
+    {
+      "value": "demo.example",
+      "kind": "domain",
+      "label": "Observed",
+      "reason": "Observed directly in packet metadata.",
+      "first_seen": "2026-10-07T16:48:10.087Z"
+    },
+    {
+      "value": "demo.example",
+      "kind": "hostname",
+      "label": "Observed",
+      "reason": "Observed directly in packet metadata.",
+      "first_seen": "2026-10-07T16:48:13.087Z"
+    },
+    {
+      "value": "192.0.2.10",
+      "kind": "ip",
+      "label": "Observed",
+      "reason": "Observed directly in packet metadata.",
+      "first_seen": "2026-10-07T16:48:10.087Z"
+    },
+    {
+      "value": "192.0.2.53",
+      "kind": "ip",
+      "label": "Observed",
+      "reason": "Observed directly in packet metadata.",
+      "first_seen": "2026-10-07T16:48:10.087Z"
+    },
+    {
+      "value": "198.51.100.20",
+      "kind": "ip",
+      "label": "Observed",
+      "reason": "Observed directly in packet metadata.",
+      "first_seen": "2026-10-07T16:48:13.087Z"
+    },
+    {
+      "value": "http://demo.example/health",
+      "kind": "url",
+      "label": "Observed",
+      "reason": "Observed directly in packet metadata.",
+      "first_seen": "2026-10-07T16:48:13.087Z"
+    },
+    {
+      "value": "PacketStory-Demo/1.0",
+      "kind": "user-agent",
+      "label": "Observed",
+      "reason": "Observed directly in packet metadata.",
+      "first_seen": "2026-10-07T16:48:13.087Z"
+    }
+  ],
+  "conversations": [
+    {
+      "protocol": "TCP",
+      "source": "192.0.2.10",
+      "source_port": 51515,
+      "destination": "198.51.100.20",
+      "destination_port": 80,
+      "packets": 1,
+      "bytes": 132,
+      "syn_attempts": 0
+    },
+    {
+      "protocol": "UDP",
+      "source": "192.0.2.10",
+      "source_port": 53000,
+      "destination": "192.0.2.53",
+      "destination_port": 53,
+      "packets": 1,
+      "bytes": 72,
+      "syn_attempts": 0
+    }
+  ],
+  "dns": [
+    {
+      "timestamp": "2026-10-07T16:48:10.087Z",
+      "source": "192.0.2.10",
+      "destination": "192.0.2.53",
+      "query": "demo.example",
+      "response": false,
+      "answers": []
+    }
+  ],
+  "http": [
+    {
+      "timestamp": "2026-10-07T16:48:13.087Z",
+      "source": "192.0.2.10",
+      "destination": "198.51.100.20",
+      "source_port": 51515,
+      "destination_port": 80,
+      "method": "GET",
+      "path": "/health",
+      "host": "demo.example",
+      "user_agent": "PacketStory-Demo/1.0"
+    }
+  ],
+  "tls": [],
+  "findings": []
+}

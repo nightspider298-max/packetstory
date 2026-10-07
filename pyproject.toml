@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "packetstory"
+version = "0.1.0"
+description = "Local-first PCAP/PCAPNG investigation timeline and reporting tool"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {file = "LICENSE"}
+authors = [{name = "PacketStory contributors"}]
+dependencies = ["scapy>=2.6,<3"]
+keywords = ["pcap", "network-forensics", "incident-response"]
+classifiers = ["Development Status :: 3 - Alpha", "Environment :: Console", "Intended Audience :: Information Technology", "License :: OSI Approved :: MIT License", "Programming Language :: Python :: 3.12", "Topic :: Security"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+packetstory = "packetstory.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q -p no:cacheprovider"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"] # Long inline HTML/CSS template literals are intentionally kept standalone.
